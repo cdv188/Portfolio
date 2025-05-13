@@ -1,0 +1,97 @@
+/*
+    Name: Chester Don Valencerina | 041170924
+    Date: 09/02/2025
+    Description: Lab 03 CSS Development
+    Filename: lab03.css
+*/
+/*
+reset the margin to 0.
+sets all the fonts to sans-serif
+made the scroll behavior to be much smoother
+*/
+*{
+    margin: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #DDD78D;
+
+}
+
+/*Header*/
+header, footer{
+    background-color: #60594D;
+    color: #93A29B;
+    border: 4px solid black;
+    padding: 10px;
+    margin: 5px;
+}
+header h1{
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/*Set all links decoration to none and size to 12 points*/
+a{
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+nav > a{   
+    padding: 5px;
+    margin: 5px; 
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 50px;
+    color: #60594D;
+}
+
+nav > a:hover{
+    background-color: #93A29B;
+    color: #8B635C;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/*Main or Sections*/
+p{
+    font-size: 14pt;
+    margin: 10px 0;
+}
+
+ul, ol{
+    list-style-type: none;
+}
+
+img{
+    float:right;
+    width: 25%;
+    margin: 10px;
+}
+
+.quotation-paragraph{
+    background-color: #DCBF85;
+    padding: 10px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+/*Footer*/
+footer{
+    text-align: center;
+}
+footer p{
+   display: flex;
+   justify-content: right;
+   font-style: italic;
+   font-size: 10pt;
+   margin-top: 20px;
+}
+footer a:hover{
+    color: #8B635C;   
+}

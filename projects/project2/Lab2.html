@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<title>Lab 4 by Chester Don Valencerina</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="box">
+			<header>
+				<h1>Registration</h1>
+				<p id="middle">Please enter the following information. Fields marked with an asterisk (*) are required.
+				where x in "neededx" respresents numbers from 1 to 8 such as needed1, needed2 ,..., needed8</p>
+			</header>
+			<form action="info.php" method="post">
+				<div id="inside">
+				<fieldset>
+					<legend>Personal Information</legend>
+					<table class="green">
+						<tr>
+							<!-- * First Name | textbox -->
+							<td><span id="needed1">*</span>First Name:</td> 
+							<td><input type="text" name="firstName" id="firstName"></td> 
+						</tr>
+						<tr>
+							<!-- * Last Name | textbox -->
+							<td ><span id="needed2">*</span>Last Name:</td>
+							<td><input type="text" name="lastName" id="lastName"></td>
+						</tr>
+						<tr>
+							<!-- * Address | textbox, with a size of 40 characters -->
+							<td class="alignPersonal"><span id="needed3">*</span>Address:</td>
+							<td><input type="text" name="address" id="address" size="40"></td>
+						</tr>
+					</table>
+					<table class="blue">
+						<tr>
+							<!-- * City | textbox -->
+							<td class="alignPersonal"><span id="needed4">*</span>City:</td>
+							<td><input type="text" name="city" id="city" title="city"></td>
+						</tr>
+					<!-- * Province | dropdown box, has options for all provinces and territories. 
+						Option values should be the short code for the province. A list is provided below. 
+						
+						BC - British Columbia
+						AB - Alberta
+						SK - Saskatchewan
+						MB - Manitoba
+						ON - Ontario
+						QC - Quebec
+						NB - New Brunswick
+						NS - Nova Scotia
+						PE - Prince Edward Island
+						NF - Newfoundland
+						YK - Yukon
+						NWT- Northwest Territories
+						NU - Nunavut
+						
+					-->
+						<tr>
+							<td ><span id="needed5">*</span>Province:</td>
+							<td>
+								<select name="province" id="province" title="Province" >
+									<option value="BC">British Columbia</option>
+									<option value="AB">Alberta</option>
+									<option value="SK">Saskatchewan</option>
+									<option value="MB">Manitoba</option>
+									<option value="ON">Ontario</option>
+									<option value="QC">Quebec</option>
+									<option value="NB">New Brunswick</option>
+									<option value="NS">Nova Scotia</option>
+									<option value="PE">Prince Edward Island</option>
+									<option value="NF">Newfoundland</option>
+									<option value="YK">Yukon</option>
+									<option value="NWT">Northwest Territories</option>
+									<option value="NU">Nunavut</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<table class="black">
+						<tr>
+							<td class="alignPersonal"><span id="needed6">*</span>Postal Code:</td>
+							<td><input type="text" name="postalCode" id="postalCode" maxlength="6"></td>
+						</tr>
+						<tr>
+							<td ><span id="needed7">*</span>Email:</td>
+							<td><input type="email" name="email" id="email"></td>
+						</tr>
+					</table>
+					<table class="red">
+						<tr>
+							<td class="alignPersonal"><span id="needed8">*</span>Home Phone:</td>
+							<td><input type="tel" name="homePhone" id="homePhone"></td>
+						</tr>
+						<tr>
+							<td>Work Phone:</td>
+							<td><input type="tel"  name="workPhone" id="workPhone"></td>
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Payment Information</legend>
+					<!-- Credit Card Type | radio buttons
+						
+						There should be three buttons: one for VISA, one for MasterCard, and one for American Express.
+						All three buttons can go in one <td> element.
+						
+						NOTE: each radio button should have the same name, but a different id. For example, you might use
+						the name "creditCard" for each, but "creditCardVisa", "creditCardAmex" and "creditCardMasterCard"
+						as the id's. 
+						
+						Also, please review the lab instructions regarding the placement of credit card icon images beside
+						each radio button. 
+					-->
+					<table>
+						<tr>
+							<td><label class="align">Credit Card Type:</label></td>
+
+							<td><img src="images/visa.png" alt="Visa" ></td>
+							<td><input type="radio" id="creditCardVisa" name="creditCard" value="Visa" required></td>
+
+							<td><img src="images/mastercard.png" alt="MasterCard" ></td>
+							<td><input type="radio" id="creditCardMasterCard" name="creditCard" value="MasterCard" required></td>
+							
+							<td><img src="images/amex.png" alt="American Express"></td>
+							<td><input type="radio" id="creditCardAmex" name="creditCard" value="American Express" required></td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<!-- Credit Card Number | textbox -->
+							<td><label for="creditcard" class="align">Credit Card Number</label></td>
+
+							<td><input type="text" id="creditcard" name="creditcard" required></td>
+							
+						</tr>
+						<tr>
+							<!-- Expiry Date | textbox, maximum 5 characters (MM/YY) -->
+							<td><label  class="align">Expiry(MM/YY)</label></td>
+
+							<td><input type="text" id="month" name="month" maxlength="5" size="2" required>
+							/
+							<input type="text" id="year" name="year" maxlength="5" size="2" required></td>
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Agree and Submit</legend>
+						<!-- * Agree to Terms and Conditions? | checkbox, value of 'yes' -->
+						<label for="agree">Check if you agree with our <a href="">Terms and Conditions</a></label>
+
+						<!-- No field name. Place a submit button in one column, and reset button in the other. -->
+						<input type="checkbox" id="agree" name="agree" value="yes" required><br><br>
+
+						<button type="submit" id="submit" name="submit">Submit Registration</button>
+
+						<button type="reset" id="reset" name="reset">Reset Form</button>
+				</fieldset>
+				</div><!-- End Content -->
+			</form>
+			<footer>	
+				<p>&copy;2013 CST8285. All rights reserved.</p>
+			</footer>
+		</div><!-- End Wrapper -->
+	</body>
+</html>

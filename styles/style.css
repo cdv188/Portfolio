@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body{
+    background: url('../img/background.png') no-repeat center fixed;
+    background-size: cover;
+}
+/* this will make sure that the scroll bar won't appear in the Home page */
+body.main{
+    overflow: hidden;
+}
+/* transitions for the home page */
+.is-transitioned-up{
+    animation: fade-in-up 2s forwards;
+}
+.is-transitioned-left{
+    animation: fade-in-left 2s forwards;
+}
+/* Gives a transition to the left to right */
+@keyframes fade-in-left {
+    from{
+        background-color: rgba(#000, 0.25);
+        opacity: 0;
+        transform: translateX(-50vw);
+    }
+    to{
+        background-color: rgba(#000, 0);
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Gives a transition going up */
+@keyframes fade-in-up {
+    from{
+        background-color: rgba(#000, 0.25);
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+    to{
+        background-color: rgba(#000, 0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Gives a transition to the nav bar going down */
+@keyframes fade-nav {
+    from{
+        background-color: rgba(#000, 0.25);
+        opacity: 0;
+        transform: translateY(-10em);
+    }
+    to{
+        background-color: rgba(#000, 0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Gives a transition to the footer going up */
+@keyframes fade-footer {
+    from{
+        background-color: rgba(#000, 0.25);
+        opacity: 0;
+        transform: translateY(10em);
+    }
+    to{
+        background-color: rgba(#000, 0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Gives a fading transition*/
+@keyframes fade {
+    from {
+        opacity: .4
+    } 
+    to {
+        opacity: 1
+    }
+}
+/* 
+    Header And Navigation Bar
+*/
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    animation: fade-nav 1s forwards;
+}
+.title-page:hover{
+    color: #f8f8f8;
+    transition-duration: 0.3s;
+}
+.follow{
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+
+}
+.follow:hover{
+    background-color: rgba(255, 255, 255, 0.474);
+    transition-duration: 0.4s;
+}
+nav > a{
+    color: rgb(0, 217, 255);
+    font-size: 2em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+header{
+    color: rgb(0, 217, 255);
+}
+li a{
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.active{
+    color: #f8f8f8;
+    background-color: rgba(0, 217, 255, 0.497);
+    padding: 10px;
+    border-radius: 10px;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    list-style: none;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.links > li{
+    margin: 0 1rem;
+}
+.nav-link{
+    color: #f8f8f8;
+}
+.links a:hover{
+    background-color: rgba(0, 217, 255, 0.497);
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+/* 
+    Home Page 
+*/
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem;
+    margin: auto;
+}
+
+.information{
+    color: white;
+    padding: 1rem;
+    width: 60rem;
+}
+.information h1{
+    color: rgb(0, 217, 255);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.information p{
+    font-size: 1.5rem;
+}
+.information >p >a{
+    color: rgb(0, 217, 255);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+.information >p >a:hover{
+    color: #1E3945;
+    transition-duration: 0.3s;
+}
+.home > img{
+    width: 32%;
+    z-index:-1;
+    
+}
+
+/* 
+    Resume Page 
+*/
+main.resume{
+    margin-top: 3rem;
+}
+.resume{
+    margin: auto;
+    max-width: 1000px;
+    background-color: #1E3945;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px #3ab7ff68;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    
+}
+.title{
+    text-align: center;
+    color: white;
+}
+
+.resume-info a{
+    color: rgb(0, 217, 255);
+    text-decoration: none;
+}
+.resume-info a:hover{
+    color: #3ab7ff68;
+    text-decoration: none;
+}
+.resume p{
+    padding: 5px 0 5px 2rem;
+}
+.resume ul{
+    padding: 5px 0 5px 3rem;
+}
+.resume div{
+    margin-bottom: 1rem;
+}
+.resume-file{
+    text-decoration: none;
+    color: #f8f8f8;
+    border: 2px solid rgb(0, 217, 255);
+    padding: 3px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+.resume-file:hover{
+    background-color: rgb(0, 217, 255);
+    transition-duration: 0.5s;
+}
+
+/* 
+    Projects Page &
+    Project Container 
+*/
+.projects{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    background-color: #1E3945;
+    box-shadow: 5px 10px #3ab7ff68;
+    padding: 25px;
+    border-radius: 50px;
+    margin-top: 50px;
+    color: white;
+}
+.project-info{
+    display: none;
+}
+
+/* Customize the Previous and Next buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(0, 217, 255);
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.next{
+    right: 25px;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover{
+    background-color: rgb(0, 217, 255);
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.project-img{
+    width: 100%;
+}
+.text {
+    color: white;
+    font-size: 18px;
+    bottom: 8px;
+}
+.dot-container{
+    text-align: center;
+    margin-top: 10px;
+}
+.project-info > h1{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* 
+    Contact Page &
+    Contact Container 
+*/
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4em auto;
+    color: white;
+    max-width: 1000px;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+input[type=text],input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: none;
+}
+textarea{
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    background-color: #1E3945;
+    box-shadow: 5px 10px #3ab7ff68;
+    border-radius: 10px;
+}
+form h1{
+    font-size: 50px;
+    text-align: center;
+}
+label{
+    font-size: 20px;
+}
+.button {
+    background-color: rgba(0, 217, 255, 0.72);
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 100px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+.message{
+    background-color: #bbb0b06c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    padding: 2rem;
+    color: #ffffff;
+}
+.button:hover{
+    background: #3ab7ff68;
+}
+
+
+/* 
+    Footer 
+*/
+footer{
+    position: fixed;
+    left: 10px;
+    bottom: 0;
+    padding: 5px;
+    color: white;
+    animation: fade-footer 1s forwards;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.footer img{
+    width: 80%;
+
+}
+.list-social-media{
+    display: flex;
+    margin-left: 1rem;
+    list-style: none;
+
+}
+.social-media{
+    border-radius: 50px;
+    filter: brightness(0) saturate(100%) invert(76%) sepia(37%) saturate(5002%) hue-rotate(143deg) brightness(99%) contrast(107%);
+    transition-duration: 0.5s;
+}
+
+.social-media:hover{
+    background-color: #adddf92f;
+    border-radius: 50px;
+    transition-duration: 0.5s;
+}
+
+
+
+/* For a Responsive portfolio */
+@media (max-width: 1000px){
+    nav{
+        flex-direction: column;
+    }
+    .follow{
+        font-size: 10pt;
+        margin-top: 15px;
+    }
+    .links a{
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .information{
+        color: white;
+        width: 100%;
+        padding: 1rem;
+    }
+    .information>p{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .home > img{
+        width: 50%;
+        object-fit: cover;
+    }
+    .resume{
+        width: 95%;
+        font-size: small;
+        margin-bottom: 70px;
+    }
+    form{
+        width: 95%;
+    }
+    .projects{
+        width: 95%;
+    }
+}

@@ -1,0 +1,123 @@
+<!--
+Name: Chester Don Valencerina
+Date: 10/02/2025
+Description: This page the Projec Page
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Assignment Portfolio project page">
+    <meta name="keywords" content="Portfolio">
+    <meta name="author" content="Chester Don Valencerina">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../img/backImag2.png" type="image/x-icon">
+    <title>Projects</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav-bar">
+                <a href="index.html" class="title-page"><h2>Portfolio</h2></a>
+                <ul class="links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="https://linkedin.com/in/chestervalencerina" target="_blank" class="follow" rel="noopener">Follow me</a>
+            </nav>
+        </header>
+
+        <main class="projects">
+
+            <div class="project-info fade">
+                <h1>Project 1</h1>
+                    <a href="../projects/project1/flexbox.html" target="_blank" rel="noopener" title="project 1"><img src="../img/project1.png" class="project-img" alt="project 1"></a>
+
+                    <h2 class="">FLEXBOX</h2>
+                    <p class="text">Project Description: This project is part of our lab 2 part 2 that I had to modify this CSS file to add some styling and exploring how flexbox works, as well making it responsive for mobile or tablet users.</p>
+            </div>
+
+            <div class="project-info fade">
+                <h1>Project 2</h1>
+                    <a href="../projects/project2/Lab2.html" target="_blank" rel="noopener" title="project 2"><img src="../img/project2.png" alt="project 2" class="project-img" ></a>
+
+                    <h2 class="">FORMS</h2>
+                    <p class="text">Project Description: This project is part of our lab 2 part 1 that I modifies this website files to add some CSS styling, as well web form while also following the exact image that was privided. Making sure it's responsive.</p>
+            </div>
+
+            <div class="project-info fade">
+                <h1>Project 3</h1>
+                    <a href="../projects/project3/Lab03.html" target="_blank" rel="noopener" title="project 3"><img src="../img/project3.png" alt="project 3" class="project-img" ></a>
+
+                    <h2 class="">CSS</h2>
+                    <p class="text">Project Description: This project is part of our lab 3 in which we were provided a unformatted HTML document and format it using CSS by following the exact image provided. Making sure it's responsive for mobile and tablet users.</p>
+            </div>
+            
+            <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlide(1)">&#10095;</a>
+
+        </main>
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- JavaScript for the Slider -->
+        <script>
+            let slideIndex = 1;
+            showSlide(slideIndex);
+    
+            function plusSlide(n){
+                showSlide(slideIndex += 1);
+            }
+    
+            function currentSlide(n){
+                showSlide(slideIndex = n);
+            }
+    
+            function showSlide(n){
+                let i;
+                let slides = document.getElementsByClassName("project-info");
+                let dots = document.getElementsByClassName("dot");
+    
+                //Resets the slidesIndex to 1
+                if (n > slides.length){
+                    slideIndex = 1;
+                }
+
+                //set the slideIndex to the length of slides if the n is less than 1
+                if (n < 1){
+                    slideIndex = slides.length;
+                }
+                
+                //Reveals the content
+                for(i = 0; i < slides.length; i++){
+                    slides[i].style.display = "none";
+                }
+    
+                //Set the class of the current dot to "active"
+                for(i = 0; i < dots.length; i++){
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+
+        <footer>
+            <div class="footer">
+                <p>&copy; 2025 Chester Don Valencerina</p>
+                <ul class="list-social-media">
+                    <li><a href="https://linkedin.com/in/chestervalencerina" target="_blank" rel="noopener"><img src="../img/linkin_logo.png" class="social-media" alt="linkedin" ></a></li>
+                    <li><a href="" rel="noopener" target="_blank"><img src="../img/github_logo.png" class="social-media" alt="github"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+    
+</html>
